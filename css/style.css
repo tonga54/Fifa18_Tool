@@ -1,0 +1,138 @@
+*{
+  color:#433111;
+}
+
+svg{
+  position: absolute;
+  top: 130px;
+  left: 150px;
+}
+
+#cancha{
+  margin: 0 auto;
+  width: 70%;
+  background-image: url("../imgs/pitch.jpg");
+  background-size:cover;
+  width: 945px;
+  height: 750px;
+}
+
+.personalizado{
+  display: none;
+}
+
+.carta{
+  width: 180px;
+  height: 280px;
+  background-position: center;
+  background-size: cover;
+  /*display: none;*/
+  transition: 1s ease all;
+  display: inline-block;
+}
+
+.info{
+  width: 16%;
+  padding-top: 22%;
+  margin-left: 5.2%;
+  float: left;
+}
+
+.imagen{
+  display: inline-block;
+  width: 70%;
+  /*margin-left: 20%;*/
+  margin-top: 18%;
+  box-sizing: border-box;
+  float: right;
+}
+
+.imagen img{
+  width: 80%;
+
+}
+
+.media{
+  font-size: 30px;
+  margin: 0px;
+  text-align: center;
+  font-family: 'DIN-Pro-Condensed-Bold';
+}
+
+.posicion{
+  text-align: center;
+  font-size: 16px;
+  font-family: 'DIN-Pro-Condensed-Bold';
+  margin-top:-6px;
+}
+
+.club{
+  width: 100%;
+}
+
+.pais{
+  width: 100%;
+}
+
+.nombre{
+  display: inline-block;
+  width: 79%;
+  padding-right: 4%;
+  margin-top: -9px;
+  float: right;
+  box-sizing: border-box;
+}
+
+.nombre h4{
+  font-family: 'DIN-Pro-Condensed-Regular';
+  /*font-size: 24px;*/
+  font-size: 1.5em;
+  text-align: center;
+  /*padding-left: 35px;*/
+}
+
+h4{
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.stats{
+  /*margin-top: 96px;*/
+  margin: 0% 5%;
+  width: 70%;
+  float: right;
+}
+
+p{
+  display: block;
+  font-family: arial;
+  /*font-size: 14px;*/
+  margin: 0px 0px 0px 0px;
+}
+
+.numero{
+  font-family: 'DIN-Pro-Condensed-Bold';
+  /*font-size: 20px;*/
+  font-size: 1.2em;
+}
+
+.caracteristica{
+  font-family: 'DIN-Pro-Condensed-Medium';
+  font-size: 1em;
+}
+
+.left{
+  width: 48%;
+  text-align: left;
+  display: inline-block;
+  padding-left: 8%;
+  box-sizing: border-box;
+}
+
+.right{
+  display: inline-block;
+  width: 48%;
+  padding-left: 10%;
+  box-sizing: border-box;
+  text-align: left;
+}
