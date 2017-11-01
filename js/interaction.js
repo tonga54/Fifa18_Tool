@@ -5,6 +5,7 @@ function buscarPlayers(){
   var apellido = $("#txtApellido").val();
   var dtPlayer = new Data(nombre,apellido);
   var players   = dtPlayer.playerHandler();
+  console.log(players);
   showCard(players);
 }
 

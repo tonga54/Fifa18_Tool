@@ -2,19 +2,94 @@
   color:#433111;
 }
 
-svg{
-  position: absolute;
-  top: 130px;
-  left: 150px;
+body{
+  /*background-color: gray;*/
+}
+
+.container{
+  margin-top: 20px;
+  background-color: white;
 }
 
 #cancha{
+  float: left;
   margin: 0 auto;
-  width: 70%;
-  background-image: url("../imgs/pitch.jpg");
-  background-size:cover;
-  width: 945px;
-  height: 750px;
+  width: 50%;
+  /*background-image: url("../imgs/pitch.jpg");
+  background-size:cover;*/
+}
+
+.estadisticas{
+  width: 50%;
+  display: inline-block;
+}
+
+.estadisticas h3{
+  text-align: center;
+  font-family: 'DIN-Pro-Condensed-Bold';
+  font-size: 22px;
+}
+
+.estadisticas div .line{
+  margin-bottom: 2px;
+  border-bottom: .2px solid rgb(201, 202, 202);
+}
+
+.estadisticas div .line .tit{
+  font-family: 'DIN-Pro-Condensed-Medium';
+  font-size: 18px;
+  color:#666;
+}
+
+.estadisticas div .line .estadis{
+  float: right;
+  font-family: 'DIN-Pro-Condensed-Medium';
+  font-size: 18px;
+}
+
+.search{
+  float: right;
+  width: 48%;
+  border-radius: 5px;
+  background-color: rgba(237, 87, 0,0.7);
+}
+
+.form{
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.form a{
+  color:white;
+  padding: 14px 24px;
+  border-radius: 10px;
+  display: inline-block;
+  background-color: rgb(237, 112, 0);
+  margin-top: 10px;
+  text-decoration: none;
+  border-bottom: 4px solid rgb(237, 151, 0);
+  box-sizing: border-box;
+  font-family: 'DIN-Pro-Condensed-Bold';
+}
+
+.form a:active{
+  border-bottom: none;
+  margin-bottom: 2px;
+  margin-top: 12px;
+}
+
+.form label{
+  font-size: 18px;
+  font-family: 'DIN-Pro-Condensed-Medium';
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.form input[type="text"]{
+  width: 250px;
+  height: 20px;
+  font-size: 18px;
+  font-family: 'DIN-Pro-Condensed-Bold';
 }
 
 .personalizado{
@@ -28,7 +103,8 @@ svg{
   background-size: cover;
   /*display: none;*/
   transition: 1s ease all;
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
 }
 
 .info{

@@ -7,44 +7,46 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <div class="container">
 
-    <div class="search">
-      <label for="txtNombre">Nombre:</label><br>
-      <input type="text" id="txtNombre" value="Edinson"><br>
-      <label for="txtApellido">Apellido:</label><br>
-      <input type="text" id="txtApellido" value="Cavani"><br>
+      <div class="search">
+        <div class="form">
+          <label for="txtNombre">Nombre:</label><br>
+          <input type="text" id="txtNombre" value="Edinson"><br>
+          <label for="txtApellido">Apellido:</label><br>
+          <input type="text" id="txtApellido" value="Cavani"><br>
+          <a href="#" id="btnEnviar">Buscar</a>
+        </div>
+      </div>
+
+      <!-- HIDE -->
+      <div class="personalizado">
+          <label for="txtPosicion">Posicion:</label><br>
+          <input type="text" id="txtPosicion" value="">
+
+          <h3>Atributos</h3>
+
+          <label for="txtRitmo">Ritmo:</label><br>
+          <input type="text" id="txtRitmo"><br>
+          <label for="txtTiro">Tiro:</label><br>
+          <input type="text" id="txtTiro"><br>
+          <label for="txtPase">Pase:</label><br>
+          <input type="text" id="txtPase"><br>
+
+          <label for="txtRegate">Regate:</label><br>
+          <input type="text" id="txtRegate"><br>
+          <label for="txtDefensa">Defensa:</label><br>
+          <input type="text" id="txtDefensa"><br>
+          <label for="txtFisico">Fisico:</label><br>
+          <input type="text" id="txtFisico"><br><br>
+
+          <input type="file" id="txtFoto">
+      </div>
+
+      <div id="cancha">
+
+      </div>
     </div>
-
-    <!-- HIDE -->
-    <div class="personalizado">
-        <label for="txtPosicion">Posicion:</label><br>
-        <input type="text" id="txtPosicion" value="">
-
-        <h3>Atributos</h3>
-
-        <label for="txtRitmo">Ritmo:</label><br>
-        <input type="text" id="txtRitmo"><br>
-        <label for="txtTiro">Tiro:</label><br>
-        <input type="text" id="txtTiro"><br>
-        <label for="txtPase">Pase:</label><br>
-        <input type="text" id="txtPase"><br>
-
-        <label for="txtRegate">Regate:</label><br>
-        <input type="text" id="txtRegate"><br>
-        <label for="txtDefensa">Defensa:</label><br>
-        <input type="text" id="txtDefensa"><br>
-        <label for="txtFisico">Fisico:</label><br>
-        <input type="text" id="txtFisico"><br><br>
-
-        <input type="file" id="txtFoto">
-    </div>
-    
-    <input type="button" id="btnEnviar" value="Cargar"><br><br>
-
-    <div id="cancha">
-
-    </div>
-
     <script
     src="https://code.jquery.com/jquery-2.2.4.min.js"
     integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="

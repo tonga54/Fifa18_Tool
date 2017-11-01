@@ -16,6 +16,7 @@ class Data{
   savePlayersObject(data){
       for(var i = 0;i < data.items.length; i++ ){
         if(data.items[i].lastName == this.apellido || data.items[i].commonName == this.mix){
+             console.log(data);
              var typeCard = "p_" + data.items[i].playerType + "_" + data.items[i].quality + ".png";
              this.jugadores.push(new Player(data.items[i],typeCard));
         }
