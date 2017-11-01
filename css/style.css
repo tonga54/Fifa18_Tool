@@ -3,7 +3,27 @@
 }
 
 body{
-  /*background-color: gray;*/
+  background-image: url("../imgs/stadium-blur-2.jpg");
+  background-size:cover;
+}
+.green{
+  color:#467200;
+}
+
+.softgreen{
+  color:#90c039;
+}
+
+.orange{
+  color:#f2b600;
+}
+
+.softorange{
+  color:#d47c00;
+}
+
+.red{
+  color:#bf3030;
 }
 
 .container{
@@ -14,34 +34,53 @@ body{
 #cancha{
   float: left;
   margin: 0 auto;
-  width: 50%;
-  /*background-image: url("../imgs/pitch.jpg");
-  background-size:cover;*/
+  width: 60%;
 }
 
-.estadisticas{
-  width: 50%;
+.playerInfo{
+  margin-bottom: 50px;
+}
+
+.lineStats{
+  display: block;
+  margin-top: 30px;
+}
+
+.detailedStats{
+  width: 40%;
   display: inline-block;
+  margin-left: 6.4%;
+  /*float: left;*/
 }
 
-.estadisticas h3{
-  text-align: center;
-  font-family: 'DIN-Pro-Condensed-Bold';
-  font-size: 22px;
-}
-
-.estadisticas div .line{
+.detailedStats div .line{
   margin-bottom: 2px;
   border-bottom: .2px solid rgb(201, 202, 202);
 }
 
-.estadisticas div .line .tit{
+
+.detailedStats .titleLine{
+  margin-bottom: 10px;
+}
+
+.detailedStats .titleLine .attributeGlobalTitle{
+  font-family: 'DIN-Pro-Condensed-Bold';
+  font-size: 28px;
+}
+
+.detailedStats .titleLine .attributeGlobalValue{
+  font-family: 'DIN-Pro-Condensed-Bold';
+  font-size: 32px;
+  float: right;
+}
+
+.detailedStats div .line .attributeTitle{
   font-family: 'DIN-Pro-Condensed-Medium';
   font-size: 18px;
   color:#666;
 }
 
-.estadisticas div .line .estadis{
+.detailedStats div .line .attributeStats{
   float: right;
   font-family: 'DIN-Pro-Condensed-Medium';
   font-size: 18px;
@@ -49,9 +88,11 @@ body{
 
 .search{
   float: right;
-  width: 48%;
+  width: 40%;
   border-radius: 5px;
-  background-color: rgba(237, 87, 0,0.7);
+  background-color: rgba(237, 87, 0,0.3);
+  /*background-image: url('../imgs/background-search.png');*/
+  /*background-size:cover;*/
 }
 
 .form{
