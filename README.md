@@ -1,6 +1,6 @@
 Para utilizar este tool necesitaras:
 
-Un complemento para tu navegador que te permita realizar request desde tu servidor local
+Un complemento para tu navegador que te permita realizar peticiones http desde tu servidor local
 recomiendo: https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi
 y tambien deberas tener un servidor apache, como xampp,wamp,etc.
 
