@@ -5,6 +5,7 @@ recomiendo: https://chrome.google.com/webstore/detail/allow-control-allow-origi/
 y tambien deberas tener un servidor apache, como xampp,wamp,etc.
 
 Steps to using this tool
+
 Should have a extension in your browser that allow perform http request on your local server. 
 I recommend: https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi
 and the other hand should have a local server like to xampp,wamp,etc
