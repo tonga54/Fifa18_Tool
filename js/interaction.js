@@ -1,6 +1,6 @@
-$("#btnEnviar").click(buscarPlayers);
+$("#btnEnviar").click(searchShowPlayer);
 
-function buscarPlayers(){
+function searchShowPlayer(){
   var nombre   = $("#txtNombre").val();
   var apellido = $("#txtApellido").val();
   var dtPlayer = new Data(nombre,apellido);
@@ -18,7 +18,7 @@ function showCard(players){
 
 
  //Cargar datos de forma manual
-function loadData(){
+function cardCreator(){
    var nombre = $("#txtNombre").val();
    var posicion = $("#txtPosicion").val();
    var ritmo = Number($("#txtRitmo").val());
