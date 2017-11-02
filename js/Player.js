@@ -49,6 +49,7 @@ class Player{
          $("#cancha").append(codigo);
      }
 
+
      changeColor (value){
        if(value >= 81){
          return "green";

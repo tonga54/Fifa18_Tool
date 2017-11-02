@@ -15,6 +15,8 @@ function showCard(players){
    }
 }
 
+
+
  //Cargar datos de forma manual
 function loadData(){
    var nombre = $("#txtNombre").val();
