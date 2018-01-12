@@ -10,6 +10,7 @@ function searchShowPlayer(){
 
 function showCard(players){
   if(players != null){
+    $("#cancha").empty();
      for(var i = 0; i < players.length; i++){
        players[i].showCard();
      }
