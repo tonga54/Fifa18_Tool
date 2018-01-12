@@ -1,56 +1,11 @@
 @font-face {
-    font-family: "DIN-Pro-Black-Italic";
-    src: url('../fonts/DIN Pro Black Italic.otf') format("opentype");
-}
-@font-face {
-    font-family: "Din-Pro-Black-";
-    src: url('../fonts/DIN Pro Black.otf') format("opentype");
-}
-@font-face {
-    font-family: "Din-Pro-Bold-Italic";
-    src: url('../fonts/DIN Pro Bold Italic.otf') format("opentype");
-}
-@font-face {
-    font-family: "Din-Pro-Bold";
-    src: url('../fonts/DIN Pro Bold.otf') format("opentype");
-}
-@font-face {
-    font-family: "Din-Pro-Condensed-Black-Italic";
-    src: url('../fonts/Din Pro Condensed Black Italic.otf') format("opentype");
-}
-@font-face {
-    font-family: "Din-Pro-Condensed-Black";
-    src: url('../fonts/Din Pro Condensed Black.otf') format("opentype");
-}
-@font-face {
-    font-family: "Din-Pro-Condensed-Bold-Italic";
-    src: url('../fonts/Din Pro Condensed Bold Italic.otf') format("opentype");
-}
-@font-face {
     font-family: "Din-Pro-Condensed-Bold";
     src: url('../fonts/Din Pro Condensed Bold.otf') format("opentype");
 }
 @font-face {
-    font-family: "Din-Pro-Condensed-Italic";
-    src: url('../fonts/Din Pro Condensed Italic.otf') format("opentype");
-}
-@font-face {
-    font-family: "Din-Pro-Condensed-Light-Italic";
-    src: url('../fonts/Din Pro Condensed Light Italic.otf') format("opentype");
-}
-@font-face {
-    font-family: "Din-Pro-Condensed-Light";
-    src: url('../fonts/Din Pro Condensed Light.otf') format("opentype");
-}
-
-
-@font-face {
     font-family: "DIN-Pro-Condensed-Medium";
     src: url('../fonts/DIN Pro Condensed Medium.otf') format("opentype");
 }
-
-
-
 @font-face {
     font-family: "DIN-Pro-Condensed-Regular";
     src: url('../fonts/DIN Pro Condensed Regular.otf') format("opentype");
