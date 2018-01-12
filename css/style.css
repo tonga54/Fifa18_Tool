@@ -53,7 +53,6 @@ body{
   width: 40%;
   display: inline-block;
   margin-left: 6.4%;
-  /*float: left;*/
 }
 
 .detailedStats div .line{
@@ -94,8 +93,6 @@ body{
   width: 40%;
   border-radius: 5px;
   background-color: rgba(237, 87, 0,0.3);
-  /*background-image: url('../imgs/background-search.png');*/
-  /*background-size:cover;*/
 }
 
 .form{
@@ -141,16 +138,10 @@ body{
 }
 
 .carta{
-  /* width: 180px;
-  height: 280px; */
-
   height: 316px;
-width: 202px;
-
-
+  width: 202px;
   background-position: center;
   background-size: cover;
-  /*display: none;*/
   transition: 1s ease all;
   display: block;
   margin: 0 auto;
@@ -166,7 +157,6 @@ width: 202px;
 .imagen{
   display: inline-block;
   width: 70%;
-  /*margin-left: 20%;*/
   margin-top: 18%;
   box-sizing: border-box;
   float: right;
@@ -210,10 +200,8 @@ width: 202px;
 
 .nombre h4{
   font-family: 'DIN-Pro-Condensed-Regular';
-  /*font-size: 24px;*/
   font-size: 1.5em;
   text-align: center;
-  /*padding-left: 35px;*/
 }
 
 h4{
@@ -222,7 +210,6 @@ h4{
 }
 
 .stats{
-  /*margin-top: 96px;*/
   margin: 0% 5%;
   width: 70%;
   float: right;
@@ -231,13 +218,11 @@ h4{
 p{
   display: block;
   font-family: arial;
-  /*font-size: 14px;*/
   margin: 0px 0px 0px 0px;
 }
 
 .numero{
   font-family: 'DIN-Pro-Condensed-Bold';
-  /*font-size: 20px;*/
   font-size: 1.4em;
 }
 
