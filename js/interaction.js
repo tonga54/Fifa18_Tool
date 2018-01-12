@@ -4,20 +4,23 @@ function searchShowPlayer(){
   var nombre   = $("#txtNombre").val();
   var apellido = $("#txtApellido").val();
   var dtPlayer = new Data(nombre,apellido);
-  var players   = dtPlayer.playerHandler();
-  console.log(players);
+  var players  = dtPlayer.playerHandler();
   showCard(players);
 }
 
 function showCard(players){
-   for(var i = 0; i < players.length; i++){
-     players[i].showCard();
-   }
+  if(players != null){
+     for(var i = 0; i < players.length; i++){
+       players[i].showCard();
+     }
+  }else{
+    alert("No se encontro al jugador");
+  }
 }
 
+// --------------------------------------------
 
-
- //Cargar datos de forma manual
+ //Para tener tu propia carta personalizada.
 function cardCreator(){
    var nombre = $("#txtNombre").val();
    var posicion = $("#txtPosicion").val();

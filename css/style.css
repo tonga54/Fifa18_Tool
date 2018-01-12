@@ -141,8 +141,13 @@ body{
 }
 
 .carta{
-  width: 180px;
-  height: 280px;
+  /* width: 180px;
+  height: 280px; */
+
+  height: 316px;
+width: 202px;
+
+
   background-position: center;
   background-size: cover;
   /*display: none;*/
@@ -198,7 +203,7 @@ body{
   display: inline-block;
   width: 79%;
   padding-right: 4%;
-  margin-top: -9px;
+  margin-top: -2px;
   float: right;
   box-sizing: border-box;
 }
@@ -233,7 +238,7 @@ p{
 .numero{
   font-family: 'DIN-Pro-Condensed-Bold';
   /*font-size: 20px;*/
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 
 .caracteristica{
