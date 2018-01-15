@@ -4,8 +4,45 @@ function searchShowPlayer(){
   var nombre   = $("#txtNombre").val();
   var apellido = $("#txtApellido").val();
   var dtPlayer = new Data(nombre,apellido);
-  var players  = dtPlayer.playerHandler();
-  showCard(players);
+  var players;
+
+
+
+//Como la peticion es asincrona, dependiendo lo que demore el servidor
+//va a hacer que mi variable players contenga algo o no, es decir
+//si el servidor demora mas que la llamada al playerHandler entonces
+//mi variable players quedara vacia, esta es una forma de iterar tantas
+//veces hasta que el servidor, realize la peticion mas rapido que la llamada
+//al playerHandler. Al iterar tantas veces va a llegar un punto que la
+//peticion sera mas rapida que mi llamada lo cual, hara que mi variable players
+//si contenga un valor.
+  function p(){
+      players = dtPlayer.playerHandler();
+  }
+
+  var i = 0;
+  var interval = setInterval(function(){
+    console.log(players);
+    if(i == 30){
+      detener();
+    }
+    if(players != undefined){
+      if(players.length > 0){
+        detener();
+      }
+    }else{
+       p();
+    }
+    i++;
+    console.log(i);
+  }, 300);
+
+  function detener(){
+    showCard(players);
+    clearInterval(interval);
+  }
+
+
 }
 
 function showCard(players){
