@@ -1,60 +1,77 @@
 $("#btnEnviar").click(searchShowPlayer);
 
 function searchShowPlayer(){
-  var nombre   = $("#txtNombre").val();
-  var apellido = $("#txtApellido").val();
-  var dtPlayer = new Data(nombre,apellido);
-  var players;
+  let nombre   = $("#txtNombre").val();
+  let apellido = $("#txtApellido").val();
+  if(nombre == "" || apellido == "" || !isNaN(nombre) || !isNaN(apellido)){
+    alert("Nombre o apellido vacio / No pueden ser numericos");
+  }else{
+    nombre = capitalizar(nombre);
+    apellido = capitalizar(apellido);
+    const dtPlayer = new Data(nombre,apellido);
+    let players;
+    const loading = $("#loading");
 
+    //Lo siguiente es una forma de iterar tantas veces
+    //hasta que la llamada ajax, logre tener todos los datos prontos (antes que el
+    //playerHandler). Al iterar tantas veces va a llegar un punto que mi peticion
+    //ajax va a haber culminado y la variable DataItems va a contener el array deseado.
+    //Para que mi funcion playerHandler pueda lograr analizar dichos datos y brindar
+    //la informacion deseada.
 
-
-//Como la peticion es asincrona, dependiendo lo que demore el servidor
-//va a hacer que mi variable players contenga algo o no, es decir
-//si el servidor demora mas que la llamada al playerHandler entonces
-//mi variable players quedara vacia, esta es una forma de iterar tantas
-//veces hasta que el servidor, realize la peticion mas rapido que la llamada
-//al playerHandler. Al iterar tantas veces va a llegar un punto que la
-//peticion sera mas rapida que mi llamada lo cual, hara que mi variable players
-//si contenga un valor.
-  function p(){
-      players = dtPlayer.playerHandler();
-  }
-
-  var i = 0;
-  var interval = setInterval(function(){
-    console.log(players);
-    if(i == 30){
-      detener();
+    function playerHandler(){
+        players = dtPlayer.playerHandler();
     }
-    if(players != undefined){
-      if(players.length > 0){
-        detener();
-      }
-    }else{
-       p();
+
+    let i = 0;
+    let interval = setInterval(function(){
+        if(i == 30){
+          loading.hide();
+          detenerIntervalo();
+        }else{
+          if(players != null){
+            loading.hide();
+            detenerIntervalo();
+          }else{
+             loading.show();
+             playerHandler();
+          }
+        }
+        i++;
+    }, 300);
+
+    function detenerIntervalo(){
+      showCard(players);
+      clearInterval(interval);
     }
-    i++;
-    console.log(i);
-  }, 300);
+    
+  }//end if
 
-  function detener(){
-    showCard(players);
-    clearInterval(interval);
-  }
-
-
-}
+}//end function
 
 function showCard(players){
   if(players != null){
     $("#cancha").empty();
-     for(var i = 0; i < players.length; i++){
+     for(let i = 0; i < players.length; i++){
        players[i].showCard();
      }
   }else{
     alert("No se encontro al jugador");
   }
 }
+
+function capitalizar(cadena){
+  let aux = "";
+  for(let i = 0; i < cadena.length;i++){
+    if(i == 0){
+        aux += cadena.charAt(i).toUpperCase();
+    }else{
+        aux += cadena.charAt(i).toLowerCase();
+    }
+  }
+  return aux;
+}
+
 
 // --------------------------------------------
 
@@ -70,9 +87,9 @@ function cardCreator(){
    var fisico = Number($("#txtFisico").val());
    var foto = $("#txtFoto").val();
 
-   for(var i = foto.length;i >= 0; i--){
+   for(let i = foto.length;i >= 0; i--){
      if(foto.charAt(i) == "\\"){
-       i = i+1
+       i = i+1;
        foto = foto.substr(i);
        break;
      }
@@ -90,7 +107,7 @@ function cardCreator(){
    $("#fisico").html(fisico);
    $(".imagen img").attr("src",foto);
 
-   var media;
+   let media;
    media = ritmo + tiro + pase + regate + defensa + fisico;
    media = media / 6;
    media = Math.round(media);

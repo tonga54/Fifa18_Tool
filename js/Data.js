@@ -1,9 +1,10 @@
-var dataItems = [];
-var backgroundCard = {
+let dataItems = [];
+const backgroundCard = {
   "sbc_base" : "0 -7268px",
   "totw_gold" : "0 -9796px",
   "fut_champions_gold" : "0 -1580px",
   "rare_gold" : "0 -1264px",
+  "gold" : "0 -316px",
   "purple" : "0 -6004px",
   "silver" : "0 -2260px",
   "legend" : "0 -632px",
@@ -19,25 +20,24 @@ class Data{
       this.nombre = nombre;
       this.apellido = apellido;
       this.jugadores = [];
-      this.getApiData();
+      this.getApiData(this.nombre);
     }
 
   playerHandler(data){
-      var retorno = null;
+      let retorno = null;
       if(dataItems.length > 0){
         this.analizarDiscrminar();
         if(this.jugadores.length > 0){
           retorno = this.jugadores;
+        }else{
+            this.getApiData(this.apellido);
         }
       }
       return retorno;
   }
 
-
-
-
-   getApiData(){
-       $.get("http://www.easports.com/fifa/ultimate-team/api/fut/item?jsonParamObject=",{name:this.nombre},
+   getApiData(parameter){
+       $.get("http://www.easports.com/fifa/ultimate-team/api/fut/item?jsonParamObject=",{name:parameter},
           function(data, status){
               if(status == "success"){
                   dataItems = data.items;
@@ -50,15 +50,15 @@ class Data{
    }
 
   analizarDiscrminar(){
-     	for(var i = 0;i < dataItems.length;i++){
-        var css = "";
-     		var firstName = this.normalizar(dataItems[i].firstName);
-     		var lastName = this.normalizar(dataItems[i].lastName);
+     	for(let i = 0;i < dataItems.length;i++){
+        let css = "";
+     		const firstName = this.normalizar(dataItems[i].firstName);
+     		const lastName = this.normalizar(dataItems[i].lastName);
      		if(firstName.indexOf(this.nombre) > -1 && lastName.indexOf(this.apellido) > -1){
-          var carta = dataItems[i].color;
+          let carta = dataItems[i].color;
           Object.getOwnPropertyNames(backgroundCard).forEach(function(val, idx, array) {
             if(carta == val){
-                if(carta == "rare_gold" || carta == "standar_gold" || carta == "silver" || carta == "legend" || carta == "rare_silver" || carta == "rare_bronze" || carta == "bronze"){
+                if(carta == "rare_gold" || carta == "gold" || carta == "silver" || carta == "legend" || carta == "rare_silver" || carta == "rare_bronze" || carta == "bronze"){
                   css = "('imgs/items-big-group0-s50e3578bc5.png')" + backgroundCard[val] + ";";
                 }
                 else{
@@ -72,15 +72,13 @@ class Data{
      	}
    }
 
-
-
   normalizar(cadena) {
-  	var s1 = 'ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç';
-  	var s2 = 'AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc';
-  	var devolucion = "";
-  	for(var i = 0; i < cadena.length ; i++){
-  		var j = 0;
-  		var char = false;
+  	const s1 = 'ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç';
+  	const s2 = 'AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc';
+  	let devolucion = "";
+  	for(let i = 0; i < cadena.length ; i++){
+  		let j = 0;
+  		let char = false;
   		while(j < s1.length && !char){
   			if(cadena.charAt(i) === s1[j]){
   				devolucion += s2[j];

@@ -12,7 +12,7 @@ class Player{
          this.fisicoGbl = obj.attributes[5].value;
          this.club = obj.club.imageUrls.normal.small;
          this.pais = obj.nation.imageUrls.medium;
-         this.analizarImagen(obj);
+         this.analizarImagenJugador(obj);
          this.posicion = obj.position;
 
          //aceleracion, velocidad
@@ -30,7 +30,7 @@ class Player{
      }
 
      showCard(){
-         var codigo = "<div class='playerInfo'><div class='carta' style=\"background:url" + this.background +" \"> <div class='info'> <h3 class='media'>" + this.rating + "</h3><h4 class='posicion'>"+ this.posicion +"</h4> <img class='club' src='" + this.club + "'><img class='pais' src='" + this.pais + "'></div><div class='imagen'><img src='" + this.img + "' alt=''></div><div class='nombre'><h4>" + this.nombre + "</h4></div><div class='stats'><div class='left'><p><span id='ritmo' class='numero'>" + this.ritmoGbl + "</span><span class='caracteristica'> RIT</span></p><p><span id='tiro' class='numero'>" + this.tiroGbl + "</span><span class='caracteristica'> TIR</span></p><p><span id='pase' class='numero'>" + this.paseGbl + "</span><span class='caracteristica'> PAS</span></p></div><div class='right'><p><span id='regate' class='numero'>" + this.regateGbl + "</span><span class='caracteristica'> REG</span></p><p><span id='defensa' class='numero'>" + this.defensaGbl + "</span><span class='caracteristica'> DEF</span></p><p><span id='fisico' class='numero'>" + this.fisicoGbl + "</span><span class='caracteristica'> FIS</span></p></div></div></div>";
+         let codigo = "<div class='playerInfo'><div class='carta' style=\"background:url" + this.background +" \"> <div class='info'> <h3 class='media'>" + this.rating + "</h3><h4 class='posicion'>"+ this.posicion +"</h4> <img class='club' src='" + this.club + "'><img class='pais' src='" + this.pais + "'></div><div class='imagen'><img src='" + this.img + "' alt=''></div><div class='nombre'><h4>" + this.nombre + "</h4></div><div class='stats'><div class='left'><p><span id='ritmo' class='numero'>" + this.ritmoGbl + "</span><span class='caracteristica'> RIT</span></p><p><span id='tiro' class='numero'>" + this.tiroGbl + "</span><span class='caracteristica'> TIR</span></p><p><span id='pase' class='numero'>" + this.paseGbl + "</span><span class='caracteristica'> PAS</span></p></div><div class='right'><p><span id='regate' class='numero'>" + this.regateGbl + "</span><span class='caracteristica'> REG</span></p><p><span id='defensa' class='numero'>" + this.defensaGbl + "</span><span class='caracteristica'> DEF</span></p><p><span id='fisico' class='numero'>" + this.fisicoGbl + "</span><span class='caracteristica'> FIS</span></p></div></div></div>";
 
          codigo += "<div class='lineStats'><div class='detailedStats' style='float:left';><div class='titleLine'><span class='attributeGlobalTitle'>RITMO</span><span class='attributeGlobalValue " + this.changeColor(this.ritmoGbl) + "'>" + this.ritmoGbl + "</span></div><div><div class='line'><span class='attributeTitle'>ACELERACION</span><span class='attributeStats " + this.changeColor(this.ritmo[0]) + "'>" + this.ritmo[0] + "</span></div><div class='line'><span class='attributeTitle'>VELOCIDAD</span><span class='attributeStats " + this.changeColor(this.ritmo[1]) + "'>" + this.ritmo[1] + "</span></div></div></div>";
 
@@ -62,7 +62,7 @@ class Player{
        }
      }
 
-     analizarImagen(obj){
+     analizarImagenJugador(obj){
        //Si el jugador no tiene una imagen especial se la asigna la por defecto
        if(obj.specialImages.largeTOTWImgUrl == null){
          this.img = obj.headshotImgUrl;
