@@ -18,6 +18,7 @@ class Player{
          this.altura = ["altura",obj.height];
          this.peso = ["peso",obj.weight];
          this.pie = ["pie",obj.foot];
+         this.nacionalidad = ["país",obj.nation.name];
          this.equipo = ["equipo",obj.club.name];
          this.liga = ["liga",obj.league.name];
          // this.posicionTotal = ["Posicion",obj.positionFull];
@@ -51,7 +52,7 @@ class Player{
 
        let auxBloque = 2;
        let bandera = false;
-       for (let i = 25; i < values.length; i++) {
+       for (let i = 26; i < values.length; i++) {
 
           if(auxBloque % 2 == 0){
             codigo += "<div class='lineStats'>";
@@ -104,10 +105,14 @@ class Player{
     static informacionEspecifica(obj){
       let specificInfo = "<div id='inf' class='detailedStats'><div>";
       const values = Object.values(obj);
-      for (let i = 13; i <= 22; i++) {
+      for (let i = 13; i <= 23; i++) {
           let nombreAtributo = values[i][0].toUpperCase();
           let valorAtributo = values[i][1];
-          specificInfo += "<div class='line'><span class='attributeTitle'>" + nombreAtributo + "</span><span class='attributeStats'>" + valorAtributo + "</span></div>";
+          if(nombreAtributo == "FILIGRANAS" || nombreAtributo == "PIERNA MALA"){
+            specificInfo += "<div class='line'><span class='attributeTitle'>" + nombreAtributo + "</span><span class='attributeStats'>" + valorAtributo + " <span class='icon-star-full'></span></span></div>";
+          }else{
+            specificInfo += "<div class='line'><span class='attributeTitle'>" + nombreAtributo + "</span><span class='attributeStats'>" + valorAtributo + "</span></div>";
+          }
       }
       specificInfo += "</div></div>";
       $(".specificInfo").html(specificInfo);
