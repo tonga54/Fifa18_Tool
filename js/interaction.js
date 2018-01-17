@@ -1,4 +1,9 @@
 $("#btnEnviar").click(searchShowPlayer);
+$(".search").keyup(function(e){
+  if(e.key == "Enter"){
+    searchShowPlayer();
+  }
+});
 
 function searchShowPlayer(){
   let nombre   = $("#txtNombre").val();
@@ -6,8 +11,8 @@ function searchShowPlayer(){
   if(nombre == "" || apellido == "" || !isNaN(nombre) || !isNaN(apellido)){
     alert("Nombre o apellido vacio / No pueden ser numericos");
   }else{
-    nombre = capitalizar(nombre);
-    apellido = capitalizar(apellido);
+    nombre = capitalizarCadenas(nombre);
+    apellido = capitalizarCadenas(apellido);
     const dtPlayer = new Data(nombre,apellido);
     let players;
     const loading = $("#loading");
@@ -18,10 +23,6 @@ function searchShowPlayer(){
     //ajax va a haber culminado y la variable DataItems va a contener el array deseado.
     //Para que mi funcion playerHandler pueda lograr analizar dichos datos y brindar
     //la informacion deseada.
-
-    function playerHandler(){
-        players = dtPlayer.playerHandler();
-    }
 
     let i = 0;
     let interval = setInterval(function(){
@@ -34,7 +35,7 @@ function searchShowPlayer(){
             detenerIntervalo();
           }else{
              loading.show();
-             playerHandler();
+             players = dtPlayer.playerHandler();
           }
         }
         i++;
@@ -42,7 +43,6 @@ function searchShowPlayer(){
 
     function detenerIntervalo(){
       showCard(players);
-      // document.getElementById("sonido").play();
       clearInterval(interval);
     }
 
@@ -53,17 +53,16 @@ function searchShowPlayer(){
 function showCard(players){
   if(players != null){
     $("#cancha").empty();
-    // players[0].informacionEspecifica();
-    informacionEspecifica(players[0]);
+    Player.informacionEspecifica(players[0]);
      for(let i = 0; i < players.length; i++){
-       players[i].showCard();
+       Player.showCard(players[i]);
      }
   }else{
     alert("No se encontro al jugador");
   }
 }
 
-function capitalizar(cadena){
+function capitalizarCadenas(cadena){
   let aux = "";
   for(let i = 0; i < cadena.length;i++){
     if(i == 0){
@@ -74,27 +73,15 @@ function capitalizar(cadena){
       }else{
         aux += cadena.charAt(i).toLowerCase();
       }
-
     }
-  }
+  }//end for
   return aux;
-}
-
-
-function informacionEspecifica(obj){
-  let specificInfo = "<div id='inf' class='detailedStats' style='float:left;'><div>";
-  const values = Object.values(obj);
-  for (let i = 13; i <= 22; i++) {
-       specificInfo+="<div class='line'><span class='attributeTitle'>"+values[i][0]+"</span><span class='attributeStats'>" + values[i][1] + "</span></div>";
-  }
-  specificInfo+="</div></div>";
-
-  $(".specificInfo").html(specificInfo);
 }
 
 // --------------------------------------------
 
- //Para tener tu propia carta personalizada.
+ // CARTAS PERSONALIZADAS
+
 function cardCreator(){
    var nombre = $("#txtNombre").val();
    var posicion = $("#txtPosicion").val();

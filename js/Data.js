@@ -60,9 +60,9 @@ class Data{
   analizarDiscrminar(){
      	for(let i = 0;i < dataItems.length;i++){
         let css = "";
-        const commonName = this.normalizar(dataItems[i].commonName);
-     		const firstName = this.normalizar(dataItems[i].firstName);
-     		const lastName = this.normalizar(dataItems[i].lastName);
+        // const commonName = this.normalizarCadenas(dataItems[i].commonName);
+     		const firstName = this.normalizarCadenas(dataItems[i].firstName);
+     		const lastName = this.normalizarCadenas(dataItems[i].lastName);
      		if(firstName.indexOf(this.nombre) > -1 && lastName.indexOf(this.apellido) > -1){
           let carta = dataItems[i].color;
           Object.getOwnPropertyNames(backgroundCard).forEach(function(val, idx, array) {
@@ -81,7 +81,7 @@ class Data{
      	}
    }
 
-  normalizar(cadena) {
+  normalizarCadenas(cadena) {
   	const s1 = 'ÃÀÁÄÂĆÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇçć';
   	const s2 = 'AAAAACEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunnccc';
   	let devolucion = "";
