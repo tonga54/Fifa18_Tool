@@ -3,27 +3,10 @@
 }
 
 body{
-  background-image: url("../imgs/stadium-blur-2.jpg");
-  background-size:cover;
-}
-.green{
-  color:#467200;
-}
-
-.softgreen{
-  color:#90c039;
-}
-
-.orange{
-  color:#f2b600;
-}
-
-.softorange{
-  color:#d47c00;
-}
-
-.red{
-  color:#bf3030;
+  background-image: url("../imgs/background.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-attachment: fixed;
 }
 
 .container{
@@ -35,6 +18,30 @@ body{
   float: left;
   margin: 0 auto;
   width: 59%;
+}
+
+/* ASIDE SEARCH AND PLAYER INFO */
+
+.specificInfo{
+  margin-top: 2%;
+}
+
+.specificInfo #inf div .line{
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+
+.specificInfo #inf div .line:last-child{
+  margin-bottom: 0px;
+}
+
+.specificInfo #inf div .line .attributeStats{
+  color:white;
+  font-size: 20px;
+}
+
+.specificInfo #inf div .line .attributeTitle{
+  font-size: 20px;
 }
 
 .playerInfo{
@@ -59,7 +66,6 @@ body{
   margin-bottom: 2px;
   border-bottom: .2px solid rgb(201, 202, 202);
 }
-
 
 .detailedStats .titleLine{
   margin-bottom: 10px;
@@ -88,11 +94,19 @@ body{
   font-size: 18px;
 }
 
-.search{
+#inf{
+  float: none !important;
+  width: 85%;
+  margin: 0 auto;
+  display: block;
+  padding: 50px;
+}
+
+.search,.specificInfo{
   float: right;
   width: 40%;
   border-radius: 5px;
-  background-color: rgba(237, 87, 0,0.3);
+  background-color: rgba(32, 27, 81,0.5);
 }
 
 .form{
@@ -101,14 +115,16 @@ body{
 }
 
 .form a{
-  color:white;
+  color:black;
   padding: 14px 24px;
   border-radius: 10px;
   display: inline-block;
-  background-color: rgb(237, 112, 0);
-  margin-top: 10px;
+  /* background-color: rgb(237, 112, 0); */
+  /* background-color: #c0ff36; */
+  background-color: #c0ff36;
+  margin-top: 20px;
   text-decoration: none;
-  border-bottom: 4px solid rgb(237, 151, 0);
+  border-bottom: 4px solid #8bb925;
   box-sizing: border-box;
   font-family: 'DIN-Pro-Condensed-Bold';
 }
@@ -116,7 +132,7 @@ body{
 .form a:active{
   border-bottom: none;
   margin-bottom: 2px;
-  margin-top: 12px;
+  margin-top: 22px;
 }
 
 .form label{
@@ -124,6 +140,8 @@ body{
   font-family: 'DIN-Pro-Condensed-Medium';
   display: inline-block;
   margin-top: 10px;
+  color:white;
+  padding-bottom: 7px;
 }
 
 .form input[type="text"]{
@@ -137,6 +155,8 @@ body{
   display: none;
 }
 
+/* CARD */
+
 .carta{
   height: 316px;
   width: 202px;
@@ -145,6 +165,8 @@ body{
   transition: 1s ease all;
   display: block;
   margin: 0 auto;
+/* margin: 28px 0px 0px 32px; */
+/* display: inline-block; */
 }
 
 .info{
@@ -157,7 +179,7 @@ body{
 .imagen{
   display: inline-block;
   width: 70%;
-  margin-top: 18%;
+  margin-top: 18.5%;
   box-sizing: border-box;
   float: right;
 }
@@ -247,10 +269,32 @@ p{
   text-align: left;
 }
 
+/* PLAYERS STATS COLORS */
+
+.green{
+  color:#467200;
+}
+
+.softgreen{
+  color:#90c039;
+}
+
+.orange{
+  color:#f2b600;
+}
+
+.softorange{
+  color:#d47c00;
+}
+
+.red{
+  color:#bf3030;
+}
+
 /* LOADING */
 
 #loading{
-  width: 99%;
+  width: 100%;
   height: 100%;
   position: absolute;
   margin: 0px;

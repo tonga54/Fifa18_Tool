@@ -42,9 +42,10 @@ function searchShowPlayer(){
 
     function detenerIntervalo(){
       showCard(players);
+      // document.getElementById("sonido").play();
       clearInterval(interval);
     }
-    
+
   }//end if
 
 }//end function
@@ -52,6 +53,8 @@ function searchShowPlayer(){
 function showCard(players){
   if(players != null){
     $("#cancha").empty();
+    // players[0].informacionEspecifica();
+    informacionEspecifica(players[0]);
      for(let i = 0; i < players.length; i++){
        players[i].showCard();
      }
@@ -66,12 +69,28 @@ function capitalizar(cadena){
     if(i == 0){
         aux += cadena.charAt(i).toUpperCase();
     }else{
+      if(cadena.charAt(i-1) == " "){
+        aux += cadena.charAt(i).toUpperCase();
+      }else{
         aux += cadena.charAt(i).toLowerCase();
+      }
+
     }
   }
   return aux;
 }
 
+
+function informacionEspecifica(obj){
+  let specificInfo = "<div id='inf' class='detailedStats' style='float:left;'><div>";
+  const values = Object.values(obj);
+  for (let i = 13; i <= 22; i++) {
+       specificInfo+="<div class='line'><span class='attributeTitle'>"+values[i][0]+"</span><span class='attributeStats'>" + values[i][1] + "</span></div>";
+  }
+  specificInfo+="</div></div>";
+
+  $(".specificInfo").html(specificInfo);
+}
 
 // --------------------------------------------
 

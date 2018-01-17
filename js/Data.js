@@ -11,7 +11,15 @@ const backgroundCard = {
   "rare_silver" : "0 -1580px",
   "rare_bronze" : "0 -948px",
   "bronze" : "0 0px",
-  "halloween" : "0 -3792px"
+  "halloween" : "0 -3792px",
+  "ones_to_watch" : "0 -5372px",
+  "toty": "0 -10428px",
+  "totw_gold" : "0 0px",
+  "award_winner": "0 0px",
+  "gotm": "0 -3476px",
+  "fut_mas": "0 -2528px",
+  "marquee": "0 -4424px",
+  "sbc_premium" : "0 -7584px"
 }
 
 class Data{
@@ -30,14 +38,14 @@ class Data{
         if(this.jugadores.length > 0){
           retorno = this.jugadores;
         }else{
-            this.getApiData(this.apellido);
+          this.getApiData(this.apellido);
         }
       }
       return retorno;
   }
 
    getApiData(parameter){
-       $.get("http://www.easports.com/fifa/ultimate-team/api/fut/item?jsonParamObject=",{name:parameter},
+       $.get("http://www.easports.com/es/fifa/ultimate-team/api/fut/item?jsonParamObject=",{name:parameter},
           function(data, status){
               if(status == "success"){
                   dataItems = data.items;
@@ -52,6 +60,7 @@ class Data{
   analizarDiscrminar(){
      	for(let i = 0;i < dataItems.length;i++){
         let css = "";
+        const commonName = this.normalizar(dataItems[i].commonName);
      		const firstName = this.normalizar(dataItems[i].firstName);
      		const lastName = this.normalizar(dataItems[i].lastName);
      		if(firstName.indexOf(this.nombre) > -1 && lastName.indexOf(this.apellido) > -1){
@@ -59,10 +68,10 @@ class Data{
           Object.getOwnPropertyNames(backgroundCard).forEach(function(val, idx, array) {
             if(carta == val){
                 if(carta == "rare_gold" || carta == "gold" || carta == "silver" || carta == "legend" || carta == "rare_silver" || carta == "rare_bronze" || carta == "bronze"){
-                  css = "('imgs/items-big-group0-s50e3578bc5.png')" + backgroundCard[val] + ";";
+                  css = "('imgs/items-0.png')" + backgroundCard[val] + ";";
                 }
                 else{
-                  css = "('imgs/items-big-group1-sbba5f1adfb.png')" + backgroundCard[val] + ";";
+                  css = "('imgs/items-1.png')" + backgroundCard[val] + ";";
                 }
             }
 
@@ -73,8 +82,8 @@ class Data{
    }
 
   normalizar(cadena) {
-  	const s1 = 'ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç';
-  	const s2 = 'AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc';
+  	const s1 = 'ÃÀÁÄÂĆÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇçć';
+  	const s2 = 'AAAAACEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunnccc';
   	let devolucion = "";
   	for(let i = 0; i < cadena.length ; i++){
   		let j = 0;
