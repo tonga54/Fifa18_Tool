@@ -14,7 +14,7 @@ body{
   background-color: white;
 }
 
-#pitch{
+#cancha{
   float: left;
   margin: 0 auto;
   width: 59%;
@@ -22,25 +22,25 @@ body{
 
 /* ASIDE SEARCH AND PLAYER INFO */
 
-#specificInfo{
+.specificInfo{
   margin-top: 2%;
 }
 
-#specificInfo #inf div .line{
+.specificInfo #inf div .line{
   margin-bottom: 20px;
   padding-bottom: 5px;
 }
 
-#specificInfo #inf div .line:last-child{
+.specificInfo #inf div .line:last-child{
   margin-bottom: 0px;
 }
 
-#specificInfo #inf div .line .attributeStats{
+.specificInfo #inf div .line .attributeStats{
   color:white;
   font-size: 20px;
 }
 
-#specificInfo #inf div .line .attributeTitle{
+.specificInfo #inf div .line .attributeTitle{
   font-size: 20px;
 }
 
@@ -102,7 +102,7 @@ body{
   padding: 50px;
 }
 
-.search,#specificInfo{
+.search,.specificInfo{
   float: right;
   width: 40%;
   border-radius: 5px;
@@ -178,84 +178,6 @@ body{
 /* margin: 28px 0px 0px 32px; */
 /* display: inline-block; */
 }
-
-
-.carta.sbc_base{
-  background:url('../imgs/items-1.png') 0 -7268px;
-}
-
-.carta.totw_gold{
-  background:url('../imgs/items-1.png') 0 -9796px;
-}
-
-.carta.fut_champions_gold{
-  background:url('../imgs/items-1.png') 0 -1580px;
-}
-
-.carta.rare_gold{
-  background:url('../imgs/items-0.png') 0 -1264px;
-}
-
-.carta.rare_silver{
-  background:url('../imgs/items-0.png') 0 -1580px;
-}
-
-.carta.silver{
-  background:url('../imgs/items-0.png') 0 -2260px;
-}
-
-.carta.legend{
-  background:url('../imgs/items-0.png') 0 -632px;
-}
-
-.carta.bronze{
-  background:url('../imgs/items-0.png') 0 0px;
-}
-
-.carta.halloween{
-  background:url('../imgs/items-1.png') 0 -3792px;
-}
-
-.carta.ones_to_watch{
-  background:url('../imgs/items-1.png') 0 -5372px;
-}
-
-.carta.toty{
-  background:url('../imgs/items-1.png') 0 -10428px;
-}
-
-.carta.award_winner{
-  background:url('../imgs/items-1.png') 0 0px;
-}
-
-.carta.gotm{
-  background:url('../imgs/items-1.png') 0 -3476px;
-}
-
-.carta.fut_mas{
-  background:url('../imgs/items-1.png') 0 -2528px;
-}
-
-.carta.marquee{
-  background:url('../imgs/items-1.png') 0 -4424px;
-}
-
-.carta.sbc_premium{
-  background:url('../imgs/items-1.png') 0 -7584px;
-}
-
-.carta.tots_gold{
-  background:url('../imgs/items-1.png') 0 -9164px;
-}
-
-.carta.rtr_gold{
-  background:url('../imgs/items-1.png') 0 -6952px;
-}
-
-.carta.europe_motm{
-  background:url('../imgs/items-1.png') 0 -632px;
-}
-
 
 .info{
   width: 16%;

@@ -115,6 +115,7 @@ class Player{
           }
       }
       specificInfo += "</div></div>";
+      console.log(specificInfo);
       $(".specificInfo").html(specificInfo);
     }
 
